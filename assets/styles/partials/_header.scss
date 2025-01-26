@@ -1,0 +1,15 @@
+@use 'variables';
+
+section.navigation {
+    grid-area: navigation;
+
+    header {
+        padding: 20px;
+
+        nav {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+    }
+}

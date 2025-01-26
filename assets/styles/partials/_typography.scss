@@ -1,0 +1,48 @@
+@use 'variables';
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'asul', 'nunito', serif;
+    position: relative;
+    width: fit-content;
+    
+    span {
+        position: absolute;
+        width: 100%;
+        height: 30px;
+        background-color: variables.$light-blue;
+        z-index: -1;
+        margin: -0.3em;
+    }
+}
+
+.archive {
+    h1, h2, h3, h4, h5, h6 {
+        span {
+            background-color: variables.$yellow;
+        }
+    }
+}
+
+.area {
+    h1, h2, h3, h4, h5, h6 {
+        span {
+            background-color: variables.$purple;
+        }
+    }
+}
+
+.projects {
+    h1, h2, h3, h4, h5, h6 {
+        span {
+            background-color: variables.$light-blue;
+        }
+    }
+}
+
+.resources {
+    h1, h2, h3, h4, h5, h6 {
+        span {
+            background-color: variables.$light-green;
+        }
+    }
+}

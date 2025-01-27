@@ -1,3 +1,8 @@
+<script setup>
+const { data: blogPosts, status } = useApi('/blog-posts?category=area')
+
+</script>
+
 <template>
     <section class="blog-list area">
         <header>
@@ -8,7 +13,10 @@
             <p>Long Term responsibilities you need to manage over a longer time.</p>
         </header>
         <main>
-            
+            <BlogList 
+                :status="status"
+                :blog-posts="blogPosts"
+            />
         </main>
     </section>
 </template>

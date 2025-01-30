@@ -1,22 +1,33 @@
 <script setup>
-const { data: blogPosts, status } = useApi('/blog-posts?category=area')
+const route = useRoute();
+const parameters = {
+    category:'area',
+    limit: 2
+}
+let blogPosts = ref({})
+let apiStatus = ref('PENDING')
+
+useAPI('/blog-posts', parameters, {
+    onResponse({ response }) {
+        blogPosts.value = response._data
+        apiStatus = response.statusText
+    }
+})
 
 </script>
 
 <template>
     <section class="blog-list area">
         <header>
-            <h1>    
-                <span></span>
-                Area
-            </h1>
+            <h1>{{ route.name }}</h1>
             <p>Long Term responsibilities you need to manage over a longer time.</p>
         </header>
-        <main>
+        <div>
             <BlogList 
-                :status="status"
+                :api-status="apiStatus"
                 :blog-posts="blogPosts"
+                :items="blogPosts.items"
             />
-        </main>
+        </div>
     </section>
 </template>

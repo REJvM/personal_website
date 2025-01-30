@@ -1,14 +1,17 @@
-export function useApi(endpoint: String) {
-    const config = useRuntimeConfig()
+import type { UseFetchOptions } from 'nuxt/app'
 
-    const apiUrl = config.public.apiUrl + endpoint
-    const { data, status, error } = useLazyFetch(
-        apiUrl,
-        {
-            headers: {
-                'API_KEY': config.public.apiKey
-            } 
-        }
-    )
-    return { data, status, error }
+export function useAPI<T>(
+  url: string,
+  parameters?: string[][],
+  options?: UseFetchOptions<T>,
+) {
+    let apiUrl = url
+    if(parameters){
+        let searchParameters = new URLSearchParams(parameters).toString()
+        apiUrl = apiUrl + '?' + searchParameters
+    }
+    return useFetch(apiUrl, {
+        ...options,
+        $fetch: useNuxtApp().$api as typeof $fetch
+    })
 }

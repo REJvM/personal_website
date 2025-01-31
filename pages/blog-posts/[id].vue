@@ -1,28 +1,22 @@
 <script setup>
-
+const { $api } = useNuxtApp()
+const blogPostRepository = repository($api)
 const route = useRoute()
 
-let blogPost = ref({})
-let status = ref('PENDING')
-
-useAPI('/blog-posts/' + route.params.id, {}, {
-    onResponse({ response }) {
-        blogPost.value = response._data
-        status = response.statusText
-    }
-})
-
+const { data: blogPost, status } = await useAsyncData(
+    () => blogPostRepository.getSingleBlogpost(route.params.id)
+)
 </script>
 
 <template>
     <section class="blog-list" :class="blogPost.category">
-        <div v-if="status === 'PENDING'">
+        <div v-if="status === 'pending'">
             <p>Loading...</p>
         </div>
-        <div v-else-if="status !== 'OK'">
+        <div v-else-if="status !== 'success'">
             <p>There has been an error loading the blog posts. Try again later.</p>
         </div>
-        <div v-else-if="blogPosts === null || blogPosts.items.length === 0">
+        <div v-else-if="blogPost === null">
             <p>No blog posts have been found.</p>
         </div>
         <div v-else>

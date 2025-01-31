@@ -1,14 +1,25 @@
 <script setup>
-let blogPosts = ref({})
-let apiStatus = ref('PENDING')
+const { $api } = useNuxtApp()
+const blogPostRepository = repository($api)
+const parameters = {
+    limit: 10,
+    offset: 1
+}
 
-useAPI('/blog-posts', parameters, {
-    onResponse({ response }) {
-        blogPosts.value = response._data
-        apiStatus = response.statusText
-    }
+const items = ref([])
+const { data: blogPosts, status, execute } = await useAsyncData(
+    () => blogPostRepository.getMoreBlogposts(parameters),
+)
+items.value.push(...blogPosts.value.items);
+
+async function loadMore() {
+    parameters.offset = parameters.offset == undefined ? 1 : parameters.offset + 1
+    await execute()
+}
+
+watch(blogPosts, async () => {
+    items.value.push(...blogPosts.value.items);
 })
-
 </script>
 
 <template>
@@ -19,9 +30,13 @@ useAPI('/blog-posts', parameters, {
         </header>
         <div>
             <BlogList 
-                :api-status="apiStatus"
-                :blog-posts="blogPosts"
+                :api-status="status"
                 :items="items"
+            />
+            <LoadMoreButton 
+                :api-status="status"
+                :blog-posts="blogPosts"
+                @load="loadMore()"
             />
         </div>
     </section>

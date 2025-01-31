@@ -1,6 +1,9 @@
 <script setup>
 const dayjs = useDayjs();
-const props = defineProps(['apiStatus', 'blogPosts', 'items'])
+const props = defineProps({
+    items: Array,
+    apiStatus: String
+})
 
 function blogPostUrl(item) {
   return '/blog-posts/' + item.id
@@ -12,16 +15,7 @@ function formatDate(date) {
 </script>
 
 <template>
-    <div v-if="apiStatus === 'PENDING'">
-        <p>Loading...</p>
-    </div>
-    <div v-else-if="apiStatus !== 'OK'">
-        <p>There has been an error loading the blog posts. Try again later.</p>
-    </div>
-    <div v-else-if="blogPosts === null || blogPosts.items.length === 0">
-        <p>No blog posts have been found.</p>
-    </div>
-    <div v-else>
+    <div v-if="items.length > 0">
         <ul>
             <li v-for="
                 item in items" 
@@ -33,5 +27,14 @@ function formatDate(date) {
                 </a>
             </li>
         </ul>
+    </div>
+    <div v-else-if="apiStatus === 'pending'">
+        <p>Loading...</p>
+    </div>
+    <div v-else-if="apiStatus !== 'success'">
+        <p>There has been an error loading the blog posts. Try again later.</p>
+    </div>
+    <div v-else-if="items.length === 0">
+        <p>No blog posts have been found.</p>
     </div>
 </template>

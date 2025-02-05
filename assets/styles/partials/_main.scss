@@ -2,12 +2,24 @@
 
 body {
     font-family: "nunito", serif;
-    min-width: 90%;
-    width: 90%;
-    margin: 0 auto;
     color: variables.$black;
+}
+
+div#container {
+    margin: 0 auto;
+    width: min(1000px, 90%);
 }
 
 main {
     margin: 1em 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+        margin: 10px 0;
+        background-color: variables.$gray;
+    }
 }

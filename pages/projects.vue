@@ -4,9 +4,10 @@ const blogPostRepository = repository($api)
 const route = useRoute();
 const parameters = {
     category:'projects', 
-    limit: 10,
+    limit: 50,
     offset: 1
 }
+const searchQuery = ref("")
 
 const items = ref([])
 const { data: blogPosts, status, execute } = await useAsyncData(
@@ -22,6 +23,19 @@ async function loadMore() {
 watch(blogPosts, async () => {
     items.value.push(...blogPosts.value.items);
 })
+
+const filteredItems = computed(() => {
+    if (searchQuery.value.length > 0) {
+        return items.value.filter((item) => {
+            return searchQuery.value
+                .toLowerCase()
+                .split(" ")
+                .every((v) => item.title.toLowerCase().includes(v));
+        });
+    } else {
+        return items.value;
+    }
+});
 </script>
 
 <template>
@@ -29,11 +43,24 @@ watch(blogPosts, async () => {
         <header>
             <h1>{{ route.name }}</h1>
             <p>Short Term projects in work or private life that keeps you currently busy.</p>
+            
+            <form>
+                <div class="fieldset">
+                    <input
+                        v-model="searchQuery"
+                        type="search"
+                        id="searchbar"
+                        placeholder="Search" 
+                        aria-label="Search"
+                    />
+                </div>
+            </form>
         </header>
         <div>
             <BlogList 
                 :api-status="status"
-                :items="items"
+                :items="filteredItems"
+                :search-query="searchQuery"
             />
             <LoadMoreButton 
                 :api-status="status"

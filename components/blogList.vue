@@ -1,5 +1,5 @@
 <script setup>
-const dayjs = useDayjs();
+const dayjs = useDayjs()
 const props = defineProps({
     items: Array,
     apiStatus: String
@@ -17,9 +17,10 @@ function formatDate(date) {
 <template>
     <div v-if="items.length > 0">
         <ul>
-            <li v-for="
-                item in items" 
+            <li 
+                v-for="item in items" 
                 :key="item.id"
+                :class="item.category"
             >
                 <a :href="blogPostUrl(item)">
                     {{ item.title }}

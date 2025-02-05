@@ -1,5 +1,9 @@
 @use 'variables';
 
+p {
+    margin: 0.3rem 0 1rem;
+}
+
 h1 {
     font-size: 2em;
 }
@@ -28,7 +32,7 @@ h1, h2, h3, h4, h5, h6, mark {
 
 h1, mark {
     &:before {
-        background-color: variables.$light-blue;
+        background-color: variables.$yellow;
         position: absolute;
         content: "";
         width: 100%;
@@ -48,34 +52,7 @@ mark {
     }
 }
 
-.archive {
-    h1, mark {
-        &:before {
-            background-color: variables.$yellow;
-        }
-    }
-}
-
-.area {
-    h1, mark {
-        &:before {
-            background-color: variables.$purple;
-        }
-    }
-}
-
-.projects {
-    h1, mark {
-        &:before {
-            background-color: variables.$light-blue;
-        }
-    }
-}
-
-.resources {
-    h1, mark {
-        &:before {
-            background-color: variables.$light-green;
-        }
-    }
+code {
+    padding: 5px;
+    background-color: hsla(0,0%,78%,.5);
 }

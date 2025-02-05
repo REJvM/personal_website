@@ -2,9 +2,10 @@
 const { $api } = useNuxtApp()
 const blogPostRepository = repository($api)
 const parameters = {
-    limit: 10,
+    limit: 50,
     offset: 1
 }
+const searchQuery = ref("")
 
 const items = ref([])
 const { data: blogPosts, status, execute } = await useAsyncData(
@@ -20,18 +21,44 @@ async function loadMore() {
 watch(blogPosts, async () => {
     items.value.push(...blogPosts.value.items);
 })
+
+const filteredItems = computed(() => {
+    if (searchQuery.value.length > 0) {
+        return items.value.filter((item) => {
+            return searchQuery.value
+                .toLowerCase()
+                .split(" ")
+                .every((v) => item.title.toLowerCase().includes(v));
+        });
+    } else {
+        return items.value;
+    }
+});
 </script>
 
 <template>
-    <section>
+    <section class="blog-list">
         <header>
             <h1>Latest Blogposts</h1>
             <p>All new and updated blogposts.</p>
+
+            <form>
+                <div class="fieldset">
+                    <input
+                        v-model="searchQuery"
+                        type="search"
+                        id="searchbar"
+                        placeholder="Search" 
+                        aria-label="Search"
+                    />
+                </div>
+            </form>
         </header>
         <div>
             <BlogList 
                 :api-status="status"
-                :items="items"
+                :items="filteredItems"
+                :search-query="searchQuery"
             />
             <LoadMoreButton 
                 :api-status="status"

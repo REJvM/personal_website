@@ -1,23 +1,23 @@
-@use 'variables';
+@use "variables";
 
-form {  
-    display: flex;
+form {
+  display: flex;
 }
 
 div.fieldset {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  input {
     width: 100%;
-    
-    input {
-        width: 100%;
-        padding: 5px 10px;
-        border: none;
-        border-bottom: 2px solid variables.$black;
-    
-        &:focus {
-            outline: none;
-            border-left: 4px solid variables.$yellow;
-        }
+    padding: 5px 10px;
+    border: none;
+    border-bottom: 2px solid variables.$black;
+
+    &:focus {
+      outline: none;
+      border-left: 4px solid variables.$yellow;
     }
+  }
 }

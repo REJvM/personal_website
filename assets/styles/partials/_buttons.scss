@@ -1,10 +1,11 @@
-@use 'variables';
+@use "variables";
 
-a, a:visited {
-    color: variables.$black;
-    text-decoration: underline;
+a,
+a:visited {
+  color: variables.$black;
+  text-decoration: underline;
 }
 
 a:hover {
-    text-decoration-line: none;
+  text-decoration-line: none;
 }

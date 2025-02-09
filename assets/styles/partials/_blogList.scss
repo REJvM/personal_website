@@ -1,28 +1,27 @@
-@use 'variables';
+@use "variables";
 
 section.blog-list {
-    header {
-        margin: 3rem 0;
-    }
+  header {
+    margin: 3rem 0;
+  }
 
-    
-    ul {
-        list-style: none;
-        padding: 0;
+  ul {
+    list-style: none;
+    padding: 0;
 
-        li {
-            margin: 10px 0;
-            background-color: variables.$gray;
+    li {
+      margin: 10px 0;
+      background-color: variables.$gray;
 
-            a {
-                padding: 1em 1.2em;
-                display: block;
+      a {
+        padding: 1em 1.2em;
+        display: block;
 
-                span.modifiedDate {
-                    display: block;
-                    font-size: 0.6em;
-                }
-            }
+        span.modifiedDate {
+          display: block;
+          font-size: 0.6em;
         }
+      }
     }
+  }
 }

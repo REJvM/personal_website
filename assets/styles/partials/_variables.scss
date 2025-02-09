@@ -1,49 +1,43 @@
-@font-face { 
-    font-family: "asul";
-    font-style: normal;
-    src: 
-        url(../fonts/Asul-Regular.ttf) format("truetype");
+@font-face {
+  font-family: "asul";
+  font-style: normal;
+  src: url(../fonts/Asul-Regular.ttf) format("truetype");
 }
 
-@font-face { 
-    font-family: "asul-bold";
-    font-style: "bold";
-    src: 
-        url(../fonts/Asul-Bold.ttf) format("truetype");
+@font-face {
+  font-family: "asul-bold";
+  font-style: "bold";
+  src: url(../fonts/Asul-Bold.ttf) format("truetype");
 }
 
-@font-face { 
-    font-family: "nunito";
-    src: 
-        url(../fonts/NunitoSans.ttf) format("truetype");
+@font-face {
+  font-family: "nunito";
+  src: url(../fonts/NunitoSans.ttf) format("truetype");
 }
-
 
 $black: #24292f;
 $gray: #eaeef2;
 
 $blue: #5bc1d3;
-$light-blue: #BCEDF6;
-$dark-blue: #1B8EA3;
+$light-blue: #bcedf6;
+$dark-blue: #1b8ea3;
 
 $red: #cd466a;
-$light-red: #F19BB2;
+$light-red: #f19bb2;
 $dark-red: #911033;
 
 $yellow: #e3b734;
-$light-yellow: #FFE187;
+$light-yellow: #ffe187;
 $dark-yellow: #987303;
 
 $purple: #7655cf;
-$light-purple: #BCA8EF;
-$dark-purple: #3E13AF;
+$light-purple: #bca8ef;
+$dark-purple: #3e13af;
 
 $green: #67b587;
-$light-green: #C8EAD5;
-$dark-green: #247E48;
-
+$light-green: #c8ead5;
+$dark-green: #247e48;
 
 $brown: #8d2710;
-$light-brown: #D06951;
-$dark-brown: #3E0C00;
-
+$light-brown: #d06951;
+$dark-brown: #3e0c00;

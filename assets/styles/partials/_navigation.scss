@@ -1,13 +1,13 @@
-@use 'variables';
+@use "variables";
 
 section.navigation {
-    header {
-        padding: 20px;
+  header {
+    padding: 20px;
 
-        nav {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
+    nav {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
     }
+  }
 }

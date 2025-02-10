@@ -1,5 +1,4 @@
 <script setup>
-const dayjs = useDayjs()
 const props = defineProps({
     items: Array,
     apiStatus: String
@@ -7,10 +6,6 @@ const props = defineProps({
 
 function blogPostUrl(item) {
   return '/blog-posts/' + item.id
-}
-
-function formatDate(date) {
-    return dayjs(date).utc().format('DD-MM-YYYY HH:mm').toString()
 }
 </script>
 

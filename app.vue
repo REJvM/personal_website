@@ -4,10 +4,10 @@
       <section class="navigation">
         <header>
           <nav>
-            <RouterLink to="/projects">Projects</RouterLink>
-            <RouterLink to="/area">Area</RouterLink>
-            <RouterLink to="/resources">Resources</RouterLink>
-            <RouterLink to="/archive">Archive</RouterLink>
+            <NuxtLink to="/projects">Projects</NuxtLink>
+            <NuxtLink to="/area">Area</NuxtLink>
+            <NuxtLink to="/resources">Resources</NuxtLink>
+            <NuxtLink to="/archive">Archive</NuxtLink>
           </nav>
         </header>
       </section>

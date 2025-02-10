@@ -8,9 +8,9 @@ const props = defineProps({
 
 <template>
     <div class="breadcrumbs">
-        <RouterLink to="/">Home</RouterLink> 
+        <NuxtLink to="/">Home</NuxtLink> 
         <template v-if="category !== undefined">
-           / <RouterLink :to="'/' + category">{{ category }}</RouterLink>
+           / <NuxtLink :to="'/' + category">{{ category }}</NuxtLink>
         </template>
         <template v-if="pageTitle != undefined">
             / {{ pageTitle }}

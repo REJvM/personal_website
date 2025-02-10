@@ -29,10 +29,14 @@ const { data: blogPost, status } = await useAsyncData(
                     <h1>
                         {{ blogPost.title }}
                     </h1>
-                    <p>Last modified on: {{ $dayjs(blogPost.lastModifiedOn).utc().format('DD-MM-YYYY HH:mm').toString() }}</p>
+                    <p>Last modified on: {{ formatDate(blogPost.lastModifiedOn) }}</p>
                 </header>
-                
-                <article v-html="blogPost.content" ></article>
+                <div class="content">
+                    <TableOfContent
+                        :content="blogPost.content ?? ''"
+                    />
+                    <article v-html="blogPost.content" ></article>
+                </div>
             </div>
         </section>
     </template>

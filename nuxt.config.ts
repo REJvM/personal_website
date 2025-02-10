@@ -10,4 +10,9 @@ export default defineNuxtConfig({
     },
   },
   modules: ["dayjs-nuxt", "@pinia/nuxt"],
+  router: {
+    options: {
+      scrollBehaviorType: "smooth",
+    },
+  },
 });

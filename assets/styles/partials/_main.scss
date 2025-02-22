@@ -1,8 +1,6 @@
-@use "variables";
-
 body {
   font-family: "nunito", serif;
-  color: variables.$black;
+  color: var(--black);
 }
 
 div#container {
@@ -20,11 +18,15 @@ ul {
 
   li {
     margin: 10px 0;
-    background-color: variables.$gray;
   }
 }
 
 div.breadcrumbs {
   font-size: 0.7em;
   text-transform: capitalize;
+}
+
+a.external:after {
+  content: url(../svg/square-arrow-out-up-right.svg);
+  display: inline-block;
 }

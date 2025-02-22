@@ -1,8 +1,6 @@
-@use "variables";
-
 a,
 a:visited {
-  color: variables.$black;
+  color: var(--color);
   text-decoration: underline;
 }
 

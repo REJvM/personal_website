@@ -1,8 +1,9 @@
 @use "reset";
+@use "partials/variables";
 @use "partials/main";
 @use "partials/typography";
+@use "partials/table";
 @use "partials/navigation";
 @use "partials/blogList";
 @use "partials/buttons";
-@use "partials/categoryColors";
 @use "partials/form";

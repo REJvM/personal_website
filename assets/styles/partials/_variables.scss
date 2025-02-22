@@ -15,29 +15,37 @@
   src: url(../fonts/NunitoSans.ttf) format("truetype");
 }
 
-$black: #24292f;
-$gray: #eaeef2;
+:root {
+  --black: #24292f;
+  --gray: #eaeef2;
+  --light-gray: #c4c4c4;
 
-$blue: #5bc1d3;
-$light-blue: #bcedf6;
-$dark-blue: #1b8ea3;
+  --color: #e3b734;
+  --light-color: #ffe187;
+  --dark-color: #987303;
 
-$red: #cd466a;
-$light-red: #f19bb2;
-$dark-red: #911033;
+  --brown: #8d2710;
+  --light-brown: #d06951;
+  --dark-brown: #3e0c00;
+}
 
-$yellow: #e3b734;
-$light-yellow: #ffe187;
-$dark-yellow: #987303;
-
-$purple: #7655cf;
-$light-purple: #bca8ef;
-$dark-purple: #3e13af;
-
-$green: #67b587;
-$light-green: #c8ead5;
-$dark-green: #247e48;
-
-$brown: #8d2710;
-$light-brown: #d06951;
-$dark-brown: #3e0c00;
+.archive {
+  --color: #cd466a;
+  --light-color: #f19bb2;
+  --dark-color: #911033;
+}
+.area {
+  --color: #7655cf;
+  --light-color: #bca8ef;
+  --dark-color: #3e13af;
+}
+.projects {
+  --color: #5bc1d3;
+  --light-color: #bcedf6;
+  --dark-color: #1b8ea3;
+}
+.resources {
+  --color: #67b587;
+  --light-color: #c8ead5;
+  --dark-color: #247e48;
+}

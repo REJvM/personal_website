@@ -20,7 +20,13 @@ type BlogPost = {
   title: String;
   content: HTMLElement;
   category: "projects" | "area" | "resources" | "archive";
+  links: Link;
   last_modified_on: Date;
+};
+
+type Link = {
+  url: String;
+  icon: String;
 };
 
 export const repository = <T>(fetch: $Fetch<T, NitroFetchRequest>) => ({

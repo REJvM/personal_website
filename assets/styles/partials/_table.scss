@@ -1,0 +1,19 @@
+figure.table {
+  table {
+    width: 100%;
+    margin: 0.3rem 0 1rem;
+    border-collapse: collapse;
+    border: 1px solid var(--light-gray);
+  }
+
+  td,
+  th {
+    padding: 0.2em;
+  }
+  tr:nth-child(even) {
+    background-color: var(--gray);
+  }
+  th {
+    background-color: var(--light-color);
+  }
+}

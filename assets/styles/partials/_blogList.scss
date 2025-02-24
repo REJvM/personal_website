@@ -1,3 +1,5 @@
+@use "variables";
+
 section.blog-list {
   header {
     margin: 1rem 0 3rem 0;
@@ -5,13 +7,17 @@ section.blog-list {
 
   div.content {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: space-between;
     gap: 1em;
 
+    article {
+      margin-bottom: 2em;
+    }
+
     aside {
       height: fit-content;
-      min-width: 150px;
+      min-width: 12em;
       position: sticky;
       align-self: flex-start;
       top: 2em;
@@ -68,6 +74,23 @@ section.blog-list {
 
       &:hover {
         background-color: var(--gray);
+      }
+    }
+  }
+}
+
+@media (max-width: variables.$medium-breakpoint) {
+  section.blog-list {
+    div.content {
+      display: inline-block;
+
+      aside {
+        position: relative;
+        top: auto;
+
+        div.table-of-content {
+          display: none;
+        }
       }
     }
   }

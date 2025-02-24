@@ -32,11 +32,11 @@ const { data: blogPost, status } = await useAsyncData(
                     <p>Last modified: {{ formatDate(blogPost.lastModifiedOn) }}</p>
                 </header>
                 <div class="content">
+                    <article v-html="blogPost.content" ></article>
                     <TableOfContent
                         :content="blogPost.content ?? ''"
                         :links="blogPost.links ?? ''"
                     />
-                    <article v-html="blogPost.content" ></article>
                 </div>
             </div>
         </section>

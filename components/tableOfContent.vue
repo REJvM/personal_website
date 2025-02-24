@@ -10,7 +10,7 @@ let headings = [...props.content.matchAll(regexConst)]
 
 <template>
     <aside>
-        <div>
+        <div class="table-of-content">
             <p>Table of Content</p>
             <ol>
                 <li v-for="heading in headings"> 
@@ -20,12 +20,12 @@ let headings = [...props.content.matchAll(regexConst)]
                 </li>
             </ol>
         </div>
-        <div v-if="links.length"> 
-            <p>Resources</p>
+        <div v-if="links.length" class="external-links"> 
+            <p>External Links</p>
             <ol>
                 <li v-for="link in links">
                     <NuxtLink :to="link.url" target="_blank" class="external">
-                        {{ link.icon }}
+                        {{ link.name ? link.name : link.icon }}
                     </NuxtLink>
                 </li>
             </ol>

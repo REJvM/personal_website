@@ -1,10 +1,12 @@
 div.transition {
   width: 100vw;
   height: 0vh;
-  background-color: var(--color);
+  background-color: #e3b734;
   position: fixed;
   left: 0;
   z-index: 100;
+  outline: 0.5em white solid;
+  outline-offset: -0.5em;
 }
 
 div.enter-transition {
@@ -15,4 +17,20 @@ div.enter-transition {
 div.exit-transition {
   height: 0vh;
   bottom: 0;
+}
+
+div.transition.index {
+  background-color: #e3b734;
+}
+div.transition.archive {
+  background-color: #cd466a;
+}
+div.transition.area {
+  background-color: #7655cf;
+}
+div.transition.projects {
+  background-color: #5bc1d3;
+}
+div.transition.resources {
+  background-color: #67b587;
 }

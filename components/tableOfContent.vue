@@ -24,7 +24,7 @@ let headings = [...props.content.matchAll(regexConst)]
             <p>External Links</p>
             <ol>
                 <li v-for="link in links">
-                    <NuxtLink :to="link.url" target="_blank" class="external">
+                    <NuxtLink :to="link.url" target="_blank" class="external" external>
                         {{ link.name ? link.name : link.icon }}
                     </NuxtLink>
                 </li>

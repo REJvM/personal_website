@@ -3,10 +3,6 @@ const props = defineProps({
     items: Array,
     apiStatus: String
 })
-
-function blogPostUrl(item) {
-  return '/blog-posts/' + item.id
-}
 </script>
 
 <template>
@@ -16,11 +12,16 @@ function blogPostUrl(item) {
                 v-for="item in items" 
                 :key="item.id"
                 :class="item.category"
-            >
-                <a :href="blogPostUrl(item)">
+            >        
+                <NuxtLink 
+                    :to="{ 
+                        path: '/blog-posts/' + item.id, 
+                        query: { category: item.category } 
+                    }"
+                >
                     {{ item.title }}
                     <span class="modifiedDate">{{ formatDate(item.last_modified_on) }}</span>
-                </a>
+                </NuxtLink>
             </li>
         </ul>
     </div>

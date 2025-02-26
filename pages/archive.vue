@@ -1,7 +1,7 @@
 <script setup>
 const { $api } = useNuxtApp()
 const blogPostRepository = repository($api)
-const route = useRoute();
+const route = useRoute()
 const parameters = {
     category:'archive', 
     limit: 50,
@@ -74,5 +74,7 @@ const filteredItems = computed(() => {
             />
         </div>
     </section>
-    <RouteTransition />
+    <RouteTransition
+        :blogPostCategory="route.name"
+     />
 </template>

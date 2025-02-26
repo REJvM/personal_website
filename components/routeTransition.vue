@@ -5,10 +5,17 @@ const props = defineProps({
 
 const route = useRoute()
 const leave = ref(false)
-const routeName = ref(props.blogPostCategory ?? route.name)
+const routeName = ref(route.name)
+
+if(props.blogPostCategory !== undefined) {
+    routeName.value = props.blogPostCategory
+}
 
 onBeforeRouteLeave((to, from, next) => {
-    routeName.value = to.name
+    routeName.value = (to.name === 'blog-posts-id' ? route.name : to.name)    
+    if(to.query.category !== undefined) {
+        routeName.value = to.query.category
+    }
     leave.value = true
     next()
 })

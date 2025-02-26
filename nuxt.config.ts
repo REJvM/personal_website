@@ -9,7 +9,7 @@ export default defineNuxtConfig({
       apiKey: process.env.API_KEY,
     },
   },
-  modules: ["dayjs-nuxt", "@pinia/nuxt"],
+  modules: ["dayjs-nuxt", "@pinia/nuxt", "@vueuse/motion/nuxt"],
   router: {
     options: {
       scrollBehaviorType: "smooth",

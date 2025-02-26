@@ -40,5 +40,8 @@ const { data: blogPost, status } = await useAsyncData(
                 </div>
             </div>
         </section>
+        <RouteTransition
+            :blogPostCategory="blogPost.category"
+        />
     </template>
 </template>

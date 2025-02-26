@@ -73,5 +73,6 @@ const filteredItems = computed(() => {
                 @load="loadMore()"
             />
         </div>
+        <RouteTransition />
     </section>
 </template>

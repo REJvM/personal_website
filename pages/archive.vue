@@ -74,4 +74,5 @@ const filteredItems = computed(() => {
             />
         </div>
     </section>
+    <RouteTransition />
 </template>

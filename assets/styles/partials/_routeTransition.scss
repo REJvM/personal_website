@@ -1,0 +1,18 @@
+div.transition {
+  width: 100vw;
+  height: 0vh;
+  background-color: var(--color);
+  position: fixed;
+  left: 0;
+  z-index: 100;
+}
+
+div.enter-transition {
+  height: 100vh;
+  top: 0;
+}
+
+div.exit-transition {
+  height: 0vh;
+  bottom: 0;
+}

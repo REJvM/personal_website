@@ -1,0 +1,12 @@
+section.blog {
+  header {
+    margin: 1rem 0 3rem 0;
+  }
+
+  div.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1em;
+  }
+}

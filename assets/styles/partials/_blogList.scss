@@ -1,64 +1,18 @@
 @use "variables";
 
 section.blog-list {
-  header {
-    margin: 1rem 0 3rem 0;
-  }
-
-  div.content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1em;
-
-    article {
-      margin-bottom: 2em;
-    }
-
-    aside {
-      height: fit-content;
-      min-width: 12em;
-      position: sticky;
-      align-self: flex-start;
-      top: 2em;
-
-      div {
-        margin: 0 0 2em 0;
-      }
-
-      p {
-        text-transform: uppercase;
-        font-weight: 200;
-      }
-
-      ol,
-      ul {
-        padding: 0.4em 1em;
-        border-left: 2px solid var(--gray);
-
-        li {
-          padding: 0.2em 0.5em;
-          list-style: none;
-
-          a {
-            padding: 0;
-            display: flex;
-            gap: 10px;
-
-            svg {
-              width: 1em;
-            }
-          }
-        }
-      }
-    }
+  div.content article {
+    margin-bottom: 2em;
   }
 
   ul {
+    padding: 0.4em 1em;
     list-style: none;
     padding: 0;
 
     li {
+      padding: 0.2em 0.5em;
+      list-style: none;
       border-left: 4px solid var(--color);
       padding: 10px;
 
@@ -73,7 +27,7 @@ section.blog-list {
       }
 
       &:hover {
-        background-color: var(--gray);
+        background-color: var(--light-gray);
       }
     }
   }

@@ -10,7 +10,7 @@ const { data: blogPost, status } = await useAsyncData(
 
 <template>
     <template v-if="blogPost !== null">
-        <section class="blog-list" :class="blogPost.category ?? ''">
+        <section class="blog blog-post" :class="blogPost.category ?? ''">
             <div v-if="status === 'pending'">
                 <p>Loading...</p>
             </div>

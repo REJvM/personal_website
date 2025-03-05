@@ -1,0 +1,45 @@
+section.blog-post {
+  aside {
+    height: fit-content;
+    min-width: 12em;
+    position: sticky;
+    align-self: flex-start;
+    top: 2em;
+
+    div {
+      margin: 0 0 2em 0;
+    }
+
+    p {
+      text-transform: uppercase;
+      font-weight: 200;
+    }
+
+    ol,
+    ul {
+      padding: 0.4em 1em 0.4em 0;
+      border-left: 2px solid var(--light-gray);
+
+      li {
+        padding: 0.2em 0.5em 0.2em 1.5em;
+        list-style: none;
+        border-left: 2px solid transparent;
+
+        a {
+          padding: 0;
+          display: flex;
+          gap: 10px;
+
+          svg {
+            width: 1em;
+          }
+        }
+
+        &:hover,
+        &.active {
+          border-left: 2px solid var(--light-color);
+        }
+      }
+    }
+  }
+}

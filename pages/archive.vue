@@ -41,7 +41,7 @@ const filteredItems = computed(() => {
 </script>
 
 <template>
-    <section class="blog-list archive">
+    <section class="blog blog-list archive">
         <Breadcrumbs
             :pageTitle="route.name"
         />

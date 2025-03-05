@@ -60,8 +60,8 @@ mark {
 }
 
 pre {
-  background-color: var(--gray);
-  border: 1px solid var(--light-gray);
+  background-color: var(--light-gray);
+  border: 1px solid var(--gray);
   color: var(--black);
   border-radius: 2px;
   position: relative;
@@ -97,7 +97,7 @@ blockquote {
   position: relative;
   padding: 20px;
   border-left: 4px solid var(--color);
-  background-color: var(--gray);
+  background-color: var(--light-gray);
 
   p:first-child:before {
     content: url(../svg/quote.svg);

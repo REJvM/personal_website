@@ -39,7 +39,7 @@ const filteredItems = computed(() => {
 </script>
 
 <template>
-    <section class="blog-list">
+    <section class="blog blog-list">
         <Breadcrumbs/>
         <header>
             <h1>Latest Blogposts</h1>

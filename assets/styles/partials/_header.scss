@@ -1,0 +1,35 @@
+section.navigation {
+  border-bottom: 2px solid var(--light-gray);
+
+  header {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+
+    nav {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+
+      a:hover {
+        background-color: var(--light-gray);
+      }
+    }
+
+    a.secondary {
+      padding: 0.4em 0.5em;
+      color: var(--black);
+      border-radius: 0.5em;
+      text-decoration: none;
+      border: 1px solid var(--gray);
+    }
+  }
+}
+
+a.menu,
+a.menu:visited {
+  padding: 0.4em 0.5em;
+  color: var(--black);
+  border-radius: 0.5em;
+  text-decoration: none;
+}

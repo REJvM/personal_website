@@ -33,3 +33,6 @@ a.menu:visited {
   border-radius: 0.5em;
   text-decoration: none;
 }
+a.active {
+  background-color: var(--light-color);
+}

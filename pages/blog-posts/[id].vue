@@ -2,6 +2,8 @@
 const { $api } = useNuxtApp()
 const blogPostRepository = repository($api)
 const route = useRoute()
+const config = useRuntimeConfig()
+const picturePath = config.public.picturePath
 
 const { data: blogPost, status } = await useAsyncData(
     () => blogPostRepository.getSingleBlogpost(route.params.id)
@@ -22,14 +24,24 @@ const { data: blogPost, status } = await useAsyncData(
             </div>
             <div v-else>
                 <Breadcrumbs
-                    :category="blogPost.category  ?? ''"
+                    :category="blogPost.category ?? ''"
                     :pageTitle="blogPost.title"
                 />
                 <header>
                     <h1>
                         {{ blogPost.title }}
                     </h1>
-                    <p>Last modified: {{ formatDate(blogPost.lastModifiedOn) }}</p>
+                    
+                    <div v-if="blogPost.user" class="blogpost-user">
+                        <img v-if="blogPost.user.picture" :src="picturePath + blogPost.user.picture" />
+                        <div>
+                            <p>{{ blogPost.user.name }}</p>
+                            <p>Last modified: {{ formatDate(blogPost.lastModifiedOn) }}</p>
+                        </div>
+                    </div>
+                    <div v-else>
+                        <p>Last modified: {{ formatDate(blogPost.lastModifiedOn) }}</p>
+                    </div>
                 </header>
                 <div class="content">
                     <article v-html="blogPost.content" ></article>

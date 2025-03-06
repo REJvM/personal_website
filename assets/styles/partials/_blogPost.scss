@@ -1,4 +1,22 @@
 section.blog-post {
+  div.blogpost-user {
+    display: flex;
+    padding: 1em 0;
+    gap: 1em;
+    align-items: center;
+
+    img {
+      width: 3em;
+      height: 100%;
+      border-radius: 50%;
+    }
+
+    p {
+      font-size: 0.8em;
+      margin: 0;
+    }
+  }
+
   aside {
     height: fit-content;
     min-width: 12em;

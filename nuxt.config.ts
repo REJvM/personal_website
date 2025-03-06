@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     public: {
       apiUrl: process.env.API_URL,
       apiKey: process.env.API_KEY,
+      picturePath: process.env.PICTURE_PATH,
     },
   },
   modules: ["dayjs-nuxt", "@pinia/nuxt", "@vueuse/motion/nuxt"],

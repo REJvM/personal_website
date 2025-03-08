@@ -1,4 +1,4 @@
-## personal_website
+## Personal website
 
 Personal blog website to document my latest explorations.
 

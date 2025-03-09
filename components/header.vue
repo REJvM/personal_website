@@ -1,5 +1,6 @@
 <script setup>
 const route = useRoute()
+const config = useRuntimeConfig()
 </script>
 
 <template>
@@ -12,7 +13,7 @@ const route = useRoute()
                     <NuxtLink to="/resources" class="menu" activeClass="active">Resources</NuxtLink>
                     <NuxtLink to="/archive" class="menu" activeClass="active">Archive</NuxtLink>
                 </nav>
-                <NuxtLink to="/login" class="menu secondary">Login</NuxtLink>
+                <a :href="config.public.cmsPath" class="menu secondary">Login</a>
             </header>
         </div>
     </section>

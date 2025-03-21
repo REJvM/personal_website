@@ -15,39 +15,50 @@
   src: url(../fonts/NunitoSans.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "firecode";
+  src: url(../fonts/FireCode.ttf) format("truetype");
+}
+
 :root {
   --black: #24292f;
   --gray: #c4c4c4;
   --light-gray: #eaeef2;
 
   --color: #e3b734;
+  --background-color: #fdf9ef;
   --light-color: #ffe187;
   --dark-color: #987303;
 
   --brown: #8d2710;
+  --background-color: #fdf1ef;
   --light-brown: #d06951;
   --dark-brown: #3e0c00;
 }
 
 .archive {
   --color: #cd466a;
+  --background-color: #fbf1f3;
   --light-color: #f19bb2;
   --dark-color: #911033;
 }
 .area {
   --color: #7655cf;
+  --background-color: #f4f1fb;
   --light-color: #bca8ef;
   --dark-color: #3e13af;
 }
 .projects {
   --color: #5bc1d3;
+  --background-color: #f1fafb;
   --light-color: #bcedf6;
   --dark-color: #1b8ea3;
 }
 .resources {
   --color: #67b587;
+  --background-color: #f3f9f5
   --light-color: #c8ead5;
-  --dark-color: #247e48;
+  --dark-color: #247e48;;
 }
 
 $small-breakpoint: 480px;

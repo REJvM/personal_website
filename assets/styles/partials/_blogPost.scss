@@ -60,4 +60,18 @@ section.blog-post {
       }
     }
   }
+
+  code {
+    div {
+      padding: 0.1em 0.3em;
+      &:before {
+        content: attr(data-number);
+        display: inline-block;
+        width: 2em;
+      }
+      &:hover {
+        background-color: var(--background-color);
+      }
+    }
+  }
 }

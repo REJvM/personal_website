@@ -1,3 +1,8 @@
+body {
+  font-family: "nunito", serif;
+  color: var(--black);
+}
+
 p {
   margin: 0.3rem 0 1rem;
 }
@@ -60,7 +65,6 @@ mark {
 }
 
 pre {
-  background-color: var(--light-gray);
   border: 1px solid var(--gray);
   color: var(--black);
   border-radius: 2px;
@@ -88,9 +92,8 @@ pre {
 }
 
 code {
+  font-family: "firecode", "nunito", sans-serif;
   background: unset;
-  border-radius: 0;
-  padding: 0;
 }
 
 blockquote {

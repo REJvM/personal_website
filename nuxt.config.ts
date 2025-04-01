@@ -17,4 +17,9 @@ export default defineNuxtConfig({
       scrollBehaviorType: "smooth",
     },
   },
+  app: {
+    head: {
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    },
+  },
 });

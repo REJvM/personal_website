@@ -1,3 +1,5 @@
+@use "variables";
+
 section.blog-post {
   div.blogpost-user {
     display: flex;
@@ -78,5 +80,26 @@ section.blog-post {
     content: url(../svg/chevrons-right.svg);
     vertical-align: middle;
     padding: 3px;
+  }
+}
+
+@media (max-width: variables.$medium-breakpoint) {
+  section.blog-post {
+    div.content {
+      display: inline-block;
+
+      article {
+        margin-bottom: 4em;
+      }
+
+      aside {
+        position: relative;
+        top: auto;
+
+        div.table-of-content {
+          display: none;
+        }
+      }
+    }
   }
 }

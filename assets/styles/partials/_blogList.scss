@@ -1,5 +1,3 @@
-@use "variables";
-
 section.blog-list {
   div.content article {
     margin-bottom: 2em;
@@ -28,23 +26,6 @@ section.blog-list {
 
       &:hover {
         background-color: var(--light-gray);
-      }
-    }
-  }
-}
-
-@media (max-width: variables.$medium-breakpoint) {
-  section.blog-list {
-    div.content {
-      display: inline-block;
-
-      aside {
-        position: relative;
-        top: auto;
-
-        div.table-of-content {
-          display: none;
-        }
       }
     }
   }

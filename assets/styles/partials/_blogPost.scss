@@ -1,3 +1,5 @@
+@use "variables";
+
 section.blog-post {
   div.blogpost-user {
     display: flex;
@@ -56,6 +58,46 @@ section.blog-post {
         &:hover,
         &.active {
           border-left: 2px solid var(--light-color);
+        }
+      }
+    }
+  }
+
+  code {
+    div {
+      padding: 0.1em 0.3em;
+      &:before {
+        content: attr(data-number);
+        display: inline-block;
+        width: 2em;
+      }
+      &:hover {
+        background-color: var(--background-color);
+      }
+    }
+  }
+  ul li::before {
+    content: url(../svg/chevrons-right.svg);
+    vertical-align: middle;
+    padding: 3px;
+  }
+}
+
+@media (max-width: variables.$medium-breakpoint) {
+  section.blog-post {
+    div.content {
+      display: inline-block;
+
+      article {
+        margin-bottom: 4em;
+      }
+
+      aside {
+        position: relative;
+        top: auto;
+
+        div.table-of-content {
+          display: none;
         }
       }
     }

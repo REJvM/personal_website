@@ -13,12 +13,6 @@ ul {
 
   li {
     margin: 10px 0;
-
-    &::before {
-      content: url(../svg/chevrons-right.svg);
-      vertical-align: middle;
-      padding: 3px;
-    }
   }
 }
 

@@ -74,4 +74,9 @@ section.blog-post {
       }
     }
   }
+  ul li::before {
+    content: url(../svg/chevrons-right.svg);
+    vertical-align: middle;
+    padding: 3px;
+  }
 }

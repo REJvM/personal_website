@@ -11,7 +11,7 @@ export default defineNuxtConfig({
       picturePath: process.env.PICTURE_PATH,
     },
   },
-  modules: ["dayjs-nuxt", "@pinia/nuxt", "@vueuse/motion/nuxt"],
+  modules: ["dayjs-nuxt", "@pinia/nuxt", "@vueuse/motion/nuxt", "@nuxthub/core"],
   router: {
     options: {
       scrollBehaviorType: "smooth",

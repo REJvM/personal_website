@@ -5,13 +5,18 @@ export default defineNuxtConfig({
   css: ["~/assets/styles/app.scss"],
   runtimeConfig: {
     public: {
-      apiUrl: process.env.API_URL,
-      apiKey: process.env.API_KEY,
+      apiUrl: process.env.NUXT_PUBLIC_API_URL,
+      apiKey: process.env.NUXT_ENV_API_KEY,
       cmsPath: process.env.CMS_PATH,
       picturePath: process.env.PICTURE_PATH,
     },
   },
-  modules: ["dayjs-nuxt", "@pinia/nuxt", "@vueuse/motion/nuxt", "@nuxthub/core"],
+  modules: [
+    "dayjs-nuxt",
+    "@pinia/nuxt",
+    "@vueuse/motion/nuxt",
+    "@nuxthub/core",
+  ],
   router: {
     options: {
       scrollBehaviorType: "smooth",

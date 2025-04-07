@@ -1,3 +1,4 @@
+import { useDayjs } from "#dayjs";
 const dayjs = useDayjs();
 
 export default function (date: string): String {

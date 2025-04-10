@@ -55,11 +55,13 @@ const { data: blogPost, status } = await useAsyncData(() =>
         </header>
         <div class="content">
           <article>
-            <img
-              v-if="blogPost.image"
-              :src="picturePath + blogPost.image"
-              :alt="blogPost.image"
-            />
+            <div class="image">
+              <img
+                v-if="blogPost.image"
+                :src="picturePath + blogPost.image"
+                :alt="blogPost.image"
+              />
+            </div>
             <section v-html="blogPost.content"></section>
           </article>
           <TableOfContent

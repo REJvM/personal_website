@@ -19,6 +19,15 @@ section.blog-post {
     }
   }
 
+  article div.image {
+    margin: 0.7em 0 2em 0;
+    background-color: var(--light-gray);
+    img {
+      margin: 0 auto;
+      max-height: 400px;
+    }
+  }
+
   aside {
     height: fit-content;
     min-width: 12em;
@@ -76,6 +85,7 @@ section.blog-post {
       }
     }
   }
+
   ul li::before {
     content: url(../svg/chevrons-right.svg);
     vertical-align: middle;

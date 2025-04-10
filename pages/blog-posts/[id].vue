@@ -36,18 +36,34 @@ const { data: blogPost, status } = await useAsyncData(() =>
             <img
               v-if="blogPost.user.picture"
               :src="picturePath + blogPost.user.picture"
+              alt="User profile picture"
             />
             <div>
               <p>{{ blogPost.user.name }}</p>
-              <!-- <p>Last modified: {{ formatDate(blogPost.lastModifiedOn) }}</p> -->
+              <p>
+                Last modified:
+                {{ formatDate(blogPost.lastModifiedOn) }}
+              </p>
             </div>
           </div>
           <div v-else>
-            <!-- <p>Last modified: {{ formatDate(blogPost.lastModifiedOn) }}</p> -->
+            <p>
+              Last modified:
+              {{ formatDate(blogPost.lastModifiedOn) }}
+            </p>
           </div>
         </header>
         <div class="content">
-          <article v-html="blogPost.content"></article>
+          <article>
+            <div class="image">
+              <img
+                v-if="blogPost.image"
+                :src="picturePath + blogPost.image"
+                :alt="blogPost.image"
+              />
+            </div>
+            <section v-html="blogPost.content"></section>
+          </article>
           <TableOfContent
             :content="blogPost.content ?? ''"
             :links="blogPost.links ?? ''"

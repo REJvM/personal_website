@@ -19,6 +19,11 @@ section.blog-post {
     }
   }
 
+  article img {
+    margin: 0.7em 0 2em 0;
+    max-height: 400px;
+  }
+
   aside {
     height: fit-content;
     min-width: 12em;
@@ -76,6 +81,7 @@ section.blog-post {
       }
     }
   }
+
   ul li::before {
     content: url(../svg/chevrons-right.svg);
     vertical-align: middle;
